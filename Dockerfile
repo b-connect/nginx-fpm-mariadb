@@ -9,6 +9,7 @@ RUN apk upgrade -U && \
     apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
     openssl \
     php7 \
+    php7-cli \
     php7-xml \
     php7-xsl \
     php7-pdo \
@@ -50,17 +51,13 @@ RUN ln -s /etc/php7 /etc/php && \
 RUN mkdir -p /var/lib/php7/sessions
 RUN chown nginx:nginx /var/lib/php7/sessions
 
-# ADD SOURCE
-RUN mkdir -p /usr/share/nginx/html
-RUN chown -Rf nginx:nginx /usr/share/nginx/html
-
 ADD https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar /bin/drush
 RUN chmod +x /bin/drush
 
 RUN mkdir /var/www/app && \
     mkdir /var/www/app/vendor && \
     mkdir /var/www/app/docroot && \
-    chown nginx:nginx /var/www/app -R
+    chown nginx:nginx /var/www/app -Rf
 
 VOLUME ["/data"]
 
