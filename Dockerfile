@@ -2,6 +2,7 @@ FROM shito/alpine-nginx:edge
 MAINTAINER Sebastian Knoth <sk@bytepark.de>
 
 ENV DRUSH_VERSION 8.1.12
+ENV DRUPAL_INSTALL_PROFILE standard
 
 # Add PHP 7
 RUN apk upgrade -U && \
