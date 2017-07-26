@@ -62,7 +62,7 @@
 # $options['l'] = 'http://example.com/subdir';
 
 // Specify your Drupal core base directory (useful if you use symlinks).
-$options['r'] = '/usr/share/nginx/html';
+$options['r'] = '/var/www/app/docroot';
 
 /**
  * Useful shell aliases:
