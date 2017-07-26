@@ -1,6 +1,8 @@
 FROM shito/alpine-nginx:edge
 MAINTAINER Sebastian Knoth <sk@bytepark.de>
 
+ENV DRUSH_VERSION 8.1.12
+
 # Add PHP 7
 RUN apk upgrade -U && \
     apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
@@ -44,6 +46,11 @@ RUN chown nginx:nginx /var/lib/php7/sessions
 # ADD SOURCE
 RUN mkdir -p /usr/share/nginx/html
 RUN chown -Rf nginx:nginx /usr/share/nginx/html
+
+ADD https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar /bin/drush
+RUN chmod +x /bin/drush
+
+RUN drush status
 
 VOLUME ["/data"]
 
