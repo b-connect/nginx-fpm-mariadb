@@ -164,5 +164,3 @@ which mysqladmin
 # mark configured
 
 touch /data/mysql.configured
-
-echo "--- MYSQL READY ---"

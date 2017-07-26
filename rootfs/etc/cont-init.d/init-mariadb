@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec /etc/run_always/db_init.sh

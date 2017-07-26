@@ -1,12 +1,6 @@
 FROM shito/alpine-nginx:edge
 MAINTAINER Sebastian Knoth <sk@bytepark.de>
 
-# Add environment variables
-ENV MARIADB_ROOT_PASSWORD="root"
-ENV MARIADB_DATABASE="app"
-ENV MARIADB_PASSWORD="app"
-ENV MARIADB_USER="app"
-
 # Add PHP 7
 RUN apk upgrade -U && \
     apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
@@ -26,6 +20,7 @@ RUN apk upgrade -U && \
     php7-opcache \
     php7-mbstring \
     php7-session \
+    php7-json \
     php7-pcntl \
     php7-mysqli \
     php7-mcrypt \
@@ -49,8 +44,6 @@ RUN chown nginx:nginx /var/lib/php7/sessions
 # ADD SOURCE
 RUN mkdir -p /usr/share/nginx/html
 RUN chown -Rf nginx:nginx /usr/share/nginx/html
-
-COPY info.php /usr/share/nginx/html/info.php
 
 VOLUME ["/data"]
 
