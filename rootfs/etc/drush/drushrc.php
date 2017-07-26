@@ -243,7 +243,7 @@ $options['r'] = '/usr/share/nginx/html';
 # $command_specific['script']['script-path'] = 'sites/all/scripts:profiles/myprofile/scripts';
 
 // Set a predetermined username and password when using site-install.
-$command_specific['site-install'] = array('account-name' => 'admin', 'account-pass' => 'admin');
+$command_specific['site-install'] = array('db-url' => 'mysql://app:app@localhost/app',  'account-name' => 'admin', 'account-pass' => 'admin');
 
 // Use Drupal version specific CLI history instead of per site.
 # $command_specific['core-cli'] = array('version-history' => TRUE);
