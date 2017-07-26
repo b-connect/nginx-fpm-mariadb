@@ -25,7 +25,11 @@ RUN apk upgrade -U && \
     php7-json \
     php7-pcntl \
     php7-mysqli \
+    php7-pdo_mysql \
     php7-mcrypt \
+    php7-iconv \
+    php7-simplexml \
+    php7-zlib \
     php7-pdo \
     mariadb \
     mariadb-client
