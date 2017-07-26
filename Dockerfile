@@ -50,7 +50,10 @@ RUN chown -Rf nginx:nginx /usr/share/nginx/html
 ADD https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar /bin/drush
 RUN chmod +x /bin/drush
 
-RUN drush status
+RUN mkdir /var/www/app && \
+    mkdir /var/www/app/vendor && \
+    mkdir /var/www/app/docroot && \
+    chown nginx:nginx /var/www/app -R
 
 VOLUME ["/data"]
 
