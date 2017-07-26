@@ -1,1 +1,2 @@
+#!/bin/sh
 drush si $DRUPAL_INSTALL_PROFILE -y 
