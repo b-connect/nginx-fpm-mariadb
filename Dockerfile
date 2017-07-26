@@ -34,6 +34,7 @@ RUN apk upgrade -U && \
     php7-simplexml \
     php7-bcmath \
     php7-imagick \
+    php7-tokenizer \
     php7-pdo \
     mariadb \
     mariadb-client
