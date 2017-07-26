@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p /var/log/php-fpm
+touch /var/log/php-fpm/fpm-error.log
+
+mkdir -p /var/log/mysql
