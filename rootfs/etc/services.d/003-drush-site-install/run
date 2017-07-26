@@ -1,4 +1,0 @@
-#!/bin/sh
-if [ -f /var/www/app/docroot/sites/default/settings.php ]; then
-  drush si $DRUPAL_INSTALL_PROFILE -y 
-fi

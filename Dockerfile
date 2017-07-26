@@ -31,11 +31,6 @@ RUN apk upgrade -U && \
     php7-iconv \
     php7-intl \
     php7-simplexml \
-    php7-ldap \
-    php7-zlib \
-    php7-ctype \
-    php7-oauth \
-    php7-redis \
     php7-bcmath \
     php7-imagick \
     php7-pdo \

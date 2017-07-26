@@ -155,9 +155,8 @@ if [ ! -d /data/db/mysql/mysql ]; then
 
 fi
 
+drush si $DRUPAL_INSTALL_PROFILE -y
 # finished, stop it an runit start the mysqld
-
-which mysqladmin
 
 /usr/bin/mysqladmin shutdown -p"$ROOT_PASSWORD"
 
