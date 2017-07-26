@@ -61,6 +61,8 @@ RUN mkdir /var/www/app && \
     mkdir /var/www/app/docroot && \
     chown nginx:nginx /var/www/app -Rf
 
+RUN ls -al /
+
 VOLUME ["/data"]
 
 ENTRYPOINT ["/init"]

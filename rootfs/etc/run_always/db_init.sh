@@ -156,6 +156,7 @@ if [ ! -d /data/db/mysql/mysql ]; then
 fi
 
 drush si $DRUPAL_INSTALL_PROFILE -y
+chown nginx:nginx -Rf /var/www/app
 # finished, stop it an runit start the mysqld
 
 /usr/bin/mysqladmin shutdown -p"$ROOT_PASSWORD"
